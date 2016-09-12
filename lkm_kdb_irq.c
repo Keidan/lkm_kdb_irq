@@ -3,7 +3,7 @@
 * @file lkm_kdb_irq.c
 * @author Keidan
 * @par Project lkm_kdb_irq
-* @copyright Copyright 2015 Keidan, all right reserved.
+* @copyright Copyright 2016 Keidan, all right reserved.
 * @par License:
 * This software is distributed in the hope that it will be useful, but WITHOUT
 * ANY WARRANTY.
