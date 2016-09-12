@@ -24,22 +24,23 @@ Make targets:
 
 Download the software :
 
-	mkdir devel
-	cd devel
-	git clone git://github.com/Keidan/kdb_irq.git
-	cd nhm
-	make
+     mkdir devel
+     cd devel
+     git clone git://github.com/Keidan/lkm_kdb_irq.git
+     cd lkm_kdb_irq
+     make
 
 
 Insert/Remove the module:
 
-	insmod ./kdb_irq.ko
-	rmmod kdb_irq
+     insmod ./kdb_irq.ko
+     rmmod kdb_irq
 	
 
 Usage:
-	After the module insertion, the current keyboard IRQ handler is removed and all the logs messages are printed into the current TTY.
-	It's important to not forget that you need to reboot your computer to restore the normal behaviour.
+
+     After the module insertion, the current keyboard IRQ handler is removed and all the logs messages are printed into the current TTY.
+     It's important to not forget that you need to reboot your computer to restore the normal behaviour.
 
 
 License (like GPL)
