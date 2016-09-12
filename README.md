@@ -33,8 +33,8 @@ Download the software :
 
 Insert/Remove the module:
 
-     insmod ./kdb_irq.ko
-     rmmod kdb_irq
+     insmod ./lkm_kdb_irq.ko
+     rmmod lkm_kdb_irq
 	
 
 Usage:
@@ -49,7 +49,7 @@ License (like GPL)
 	You can:
 		- Redistribute the sources code and binaries.
 		- Modify the Sources code.
-		- Use a part of the sources (less than 50%) in an other software, just write somewhere "nhm is great" visible by the user (on your product or on your website with a link to my page).
+		- Use a part of the sources (less than 50%) in an other software, just write somewhere "lkm_kdb_irq is great" visible by the user (on your product or on your website with a link to my page).
 		- Redistribute the modification only if you want.
 		- Send me the bug-fix (it could be great).
 		- Pay me a beer or some other things.
