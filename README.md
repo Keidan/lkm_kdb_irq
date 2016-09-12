@@ -5,8 +5,8 @@ lkm_kdb_irq
 
 
 This module replace the current keyboard handler and displays the keycode and  the key status either pressed or released (see dmesg).
-This module is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY.
 
+This module is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY.
 
 This module is by no means an application and has no other purpose than to demonstrate the use of IRQ handler of GNU Linux.
 
