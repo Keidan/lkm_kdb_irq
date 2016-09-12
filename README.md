@@ -1,7 +1,7 @@
 lkm_kdb_irq
 ===
 
-(GPL) Keyboard IRQ is a FREE kernel module.
+(GPL) LKM Keyboard IRQ.
 
 
 This module replace the current keyboard handler and displays the keycode and  the key status either pressed or released (see dmesg).
