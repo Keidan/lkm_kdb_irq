@@ -1,4 +1,4 @@
-kdb_irq
+lkm_kdb_irq
 ===
 
 (GPL) Keyboard IRQ is a FREE kernel module.
