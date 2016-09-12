@@ -69,7 +69,9 @@ lkm_kdb_irq_task_t *work;
  * This will get called by the kernel as soon as it's safe to do everything normally allowed by kernel modules.
  */
 static void lkm_kdb_irq_got_char(struct work_struct *w) {
+  /* Get the main pointer */
   lkm_kdb_irq_task_t *work = container_of(w, lkm_kdb_irq_task_t, w);
+  /* Get scancode and the release state */
   int scancode = work->scancode & 0x7F;
   char released = work->scancode & 0x80 ? 1 : 0;
   printk(KERN_INFO "Scan Code %x %s.\n",
@@ -87,8 +89,9 @@ irqreturn_t lkm_kdb_irq_handler(int irq, void *dev_id) {
   /* Read keyboard status */
   status = inb(LKM_KDB_STATUS);
   scancode = inb(LKM_KDB_SCANCODE);
-
+  /* Write the new value */
   work->scancode = scancode;
+  /* Queue new work */
   queue_work(lkm_kdb_irq_wq, &work->w);
   return IRQ_HANDLED;
 }
@@ -99,7 +102,7 @@ irqreturn_t lkm_kdb_irq_handler(int irq, void *dev_id) {
  * @return returns 0 if successful
  */
 static int __init lkm_kdb_irq_init(void) {
-
+  /* Create/init/alloc the necessaries objects to the workqueue functions */
   lkm_kdb_irq_wq = create_workqueue(LKM_KDB_IRQ_WQ_NAME);
   work = (lkm_kdb_irq_task_t *)kmalloc(sizeof(lkm_kdb_irq_task_t), GFP_KERNEL);
   if (work) {
@@ -123,7 +126,7 @@ static int __init lkm_kdb_irq_init(void) {
  * @brief The LKM cleanup function.
  */
 static void __exit lkm_kdb_irq_exit(void) {  
-  /* cleanup workqueue resourses */
+  /* cleanup workqueue resources */
   flush_workqueue(lkm_kdb_irq_wq);
   destroy_workqueue(lkm_kdb_irq_wq);
   kfree((void *)work);
